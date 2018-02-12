@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-	// подключаемся к боту с помощью токена
 
 	env := os.Getenv("TOKEN")
 
@@ -22,7 +21,6 @@ func main() {
 	}
 
 	bot.Debug = true
-	// log.Printf("Authorized on account %s", bot.Self.UserName)
 
 	u := tgbotapi.NewUpdate(0)
 	u.Timeout = 60
@@ -36,7 +34,6 @@ func main() {
 		}
 
 		reply := "Hello, @" + update.Message.Chat.UserName + "!"
-		// log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
 
 		if reply != " " {
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, reply)
